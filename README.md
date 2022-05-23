@@ -32,7 +32,8 @@ Bước 1:Sau khi truy cập vào link click vào góc bên phải để tải v
 ![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
 B2:mở file GameWorld.rar chọn release.
 ![.](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
-B3: Chọn SDL_Lession3 để chạy chương trình .
+
+B3:Chọn SDL_Lession3 để chạy chương trình .
 ![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
 
 **CÁC Ý TƯỞNG CHÍNH**
