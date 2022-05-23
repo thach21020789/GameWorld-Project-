@@ -37,6 +37,7 @@ B3:Chọn SDL_Lession3 để chạy chương trình .
 ![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
 
 Link youtube: https://youtu.be/3o1E1h5qmh4
+
 **CÁC Ý TƯỞNG CHÍNH**
 
 
@@ -120,5 +121,5 @@ Qua quá trình làm game giúp cho bản thân các sinh viên học được n
 
   - Trong quá trình làm game điều tâm tắc đầu tiên của bản thân tôi là phần render random các đối tượng, và xử lí được va chạm cho các đối tượng sau nhiều lần thất bại.
   - điều thứ  2 là xử lí khi ăn vật phẩm xe thay đổi màu sắc xe của người chơi
-  
+  - Làm được 1 con game đơn giản mà trước khi học mình vẫn nghĩ mình sẽ không thể thực hiện được nó.
   
