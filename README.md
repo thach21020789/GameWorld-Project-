@@ -28,12 +28,12 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 [Tải xuống tại đây:](https://drive.google.com/file/d/1ydovbY9XF1h_YOjeAGJi6rjWbDGCcEoi/view?usp=sharing)
 
 
-
-![Bước 1:Sau khi truy cập vào link click vào góc bên phải để tải về.](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
-
-![B2:mở file GameWorld.rar chọn release](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
-
-![B3: chon SDL_Lession3 để chạy chương trình ](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
+Bước 1:Sau khi truy cập vào link click vào góc bên phải để tải về.
+![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
+B2:mở file GameWorld.rar chọn release.
+![.](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
+B3: chon SDL_Lession3 để chạy chương trình .
+![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
 
 **CÁC Ý TƯỞNG CHÍNH**
 
