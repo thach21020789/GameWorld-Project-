@@ -36,7 +36,6 @@ B2:mở file GameWorld.rar chọn release.
 B3:Chọn SDL_Lession3 để chạy chương trình .
 ![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
 
-Link youtube: https://youtu.be/3o1E1h5qmh4
 
 **CÁC Ý TƯỞNG CHÍNH**
 
@@ -64,6 +63,8 @@ Link youtube: https://youtu.be/3o1E1h5qmh4
 
 **MÔ TẢ CHỨC NĂNG**
 
+ Link mô tả: https://youtu.be/3o1E1h5qmh4
+  
 - **Hệ thống meneu với các nút chức năng.**
   - Nút play.
   - Nút option: giới thiệu, hướng dẫn chung về game. Nút này ta chỉ cần trỏ con chuột của mình tới vị trí của nút.
