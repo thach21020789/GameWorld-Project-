@@ -25,9 +25,19 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 
 **CÁCH CÀI ĐẶT**
 
+[Tải xuống tại đây:](https://drive.google.com/file/d/1ydovbY9XF1h_YOjeAGJi6rjWbDGCcEoi/view?usp=sharing)
 
+
+
+![Bước 1:Sau khi truy cập vào link click vào góc bên phải để tải về.](C:\Users\Admin\Desktop\1_.PNG)
+
+![B2:mở file GameWorld.rar chọn release](C:\Users\Admin\Desktop\2__.PNG)
+
+![B3: chon SDL_Lession3 để chạy chương trình ](C:\Users\Admin\Desktop\3__.PNG)
 
 **CÁC Ý TƯỞNG CHÍNH**
+
+
 
 * **Ramdom các vật thể ngẫu nhiên:**
 
