@@ -65,6 +65,8 @@ B3:Chọn SDL_Lession3 để chạy chương trình .
 
 #### **MÔ TẢ CHỨC NĂNG**
 
+
+
  Link mô tả: https://youtu.be/3o1E1h5qmh4
 
 - **Hệ thống meneu với các nút chức năng.**
