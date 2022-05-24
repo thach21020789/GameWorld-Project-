@@ -30,12 +30,14 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 
 Bước 1:Sau khi truy cập vào link click vào góc bên phải để tải về.
 ![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
+
 B2:mở file GameWorld.rar chọn release.
 ![.](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
 
 B3:Chọn SDL_Lession3 để chạy chương trình .
 ![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
 
+*Lưu ý: Bạn phải tải file gameworld.rar thì mới có file SDl_Lession3.exe. Trong google drive sẽ không có sắn.
 
 **CÁC Ý TƯỞNG CHÍNH**
 
@@ -114,7 +116,7 @@ Qua quá trình làm game giúp cho bản thân các sinh viên học được n
     - thêm nhiều và đa dang dạng các chướng ngại trên đường.
     - Chuyển màn: khi nhận được một số điểm nào đó, background sẽ thay đổi.
   - **Cải thiện đồ họa cho game.**
-    - cải thiện lại cho các nút bầm xe, và các vật thể .
+    - cải thiện lại cho các nút bầm xe, và các vật thể.
   - **Cải thiện về cách nhận điểm.**
     - Ta sẽ render ra các texture điểm ở các làn đường và khi xảy va chạm thì ta sẽ nhận được số điểm mà texture đó quy định.
 
@@ -122,5 +124,5 @@ Qua quá trình làm game giúp cho bản thân các sinh viên học được n
 
   - Trong quá trình làm game điều tâm tắc đầu tiên của bản thân tôi là phần render random các đối tượng, và xử lí được va chạm cho các đối tượng sau nhiều lần thất bại.
   - điều thứ  2 là xử lí khi ăn vật phẩm xe thay đổi màu sắc xe của người chơi
-  - Làm được 1 con game đơn giản mà trước khi học mình vẫn nghĩ mình sẽ không thể thực hiện được nó.
+  - Làm được 1 con game đơn giản mà trước khi học mình vẫn nghĩ mình sẽ không thể thực hiện được.
   
