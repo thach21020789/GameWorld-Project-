@@ -37,7 +37,7 @@ B3: Chọn GameWorld.exe để chạy chương trình.
 
 ![.](https://user-images.githubusercontent.com/100114917/170213304-0115f488-4151-454b-8b87-1e5b843fd151.PNG)
 
-*Lưu ý: Bạn phải tải file gameworld.rar thì mới có file SDL_Lession3.exe. Trong google drive sẽ không có sẵn.
+*Lưu ý: Bạn phải tải file gameworld.rar thì mới có file GameWorld.exe. Trong google drive sẽ không có sẵn.
 
 #### **CÁC Ý TƯỞNG CHÍNH**
 
