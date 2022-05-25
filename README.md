@@ -25,19 +25,18 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 
 #### **CÁCH CÀI ĐẶT**
 
-[Tải xuống tại đây:](https://drive.google.com/file/d/1ydovbY9XF1h_YOjeAGJi6rjWbDGCcEoi/view?usp=sharing)
+Tải xuống tại đây:[Dowload](https://drive.google.com/file/d/1ydovbY9XF1h_YOjeAGJi6rjWbDGCcEoi/view?usp=sharing)
 
-
-Bước 1:Sau khi truy cập vào link click vào góc bên phải để tải về.
+Bước 1: Sau khi truy cập vào link click vào góc bên phải để tải về.
 ![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
 
-B2:mở file GameWorld.rar chọn release.
+B2: mở file GameWorld.rar chọn release.
 ![.](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
 
-B3:Chọn SDL_Lession3 để chạy chương trình .
+B3: Chọn SDL_Lession3 để chạy chương trình .
 ![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
 
-*Lưu ý: Bạn phải tải file gameworld.rar thì mới có file SDl_Lession3.exe. Trong google drive sẽ không có sắn.
+*Lưu ý: Bạn phải tải file gameworld.rar thì mới có file SDL_Lession3.exe. Trong google drive sẽ không có sẵn.
 
 #### **CÁC Ý TƯỞNG CHÍNH**
 
@@ -59,15 +58,12 @@ B3:Chọn SDL_Lession3 để chạy chương trình .
     -   **Lưu ý** : khi ta xét điều kiện ngược lại để xảy ra va chạm thì sẽ **không đúng**
 
 * **Thay đổi màu sắc của xe khi ăn được vật phẩm.**
-
   - Ta sẽ tạo ra 1 đối tượng mainCar và 2  texture là 2 trạng thái khi được cường hóa sức mạnh khi không được cường hóa sức mạnh.
   - Khi ta kiểm tra điều kiện xảy ra va chạm với vận phầm ta sẽ có biến lưu thời gian tại thời điểm đó, ta xét lại trạng thái của xe khi hết thời gian quy ta đinh lại xét lại trạng thái ban đầu của nó.
 
-#### **MÔ TẢ CHỨC NĂNG**
+#### **MÔ TẢ CHỨC NĂNG*
 
-
-
- Link mô tả: https://youtu.be/3o1E1h5qmh4
+ Link Youtube mô tả: https://youtu.be/3o1E1h5qmh4
 
 - **Hệ thống meneu với các nút chức năng.**
   - Nút play.
@@ -95,7 +91,7 @@ B3:Chọn SDL_Lession3 để chạy chương trình .
 - **Sinh ngẫu nhiên số.**
 - **Chia file.**
 - **Các lớp đối tượng được sử dụng.**
-  - class LTexture.
+  - Class LTexture.
   - Class buttonMeneu.
   - Class CommomObject.
   - Class LTimer.
@@ -104,26 +100,37 @@ B3:Chọn SDL_Lession3 để chạy chương trình .
   - Class ObstalceCar.
   - Class ObstacleObject.
 
-#### **KẾT LUẬN,HƯỚNG PHÁT TRIỂN GAME, NHỮNG ĐIỀU TÂM ĐẮC.**
+#### **KẾT LUẬN,HƯỚNG PHÁT TRIỂN GAME, NHỮNG ĐIỀU TÂM ĐẮC.
 
 Qua quá trình làm game giúp cho bản thân các sinh viên học được nhiều về kĩ năng viết code, xử lí code, trình bày code, kĩ thuật tách file, khả năng tư duy, học được kiến thức mới về đồ họa, học được thêm nhiều kiến thức khác như github, photoshop, thuần thục hơn trong việc sử dụng class, cũng như khả năng kiên trì, tự tìm hiểu học hỏi, kĩ năng sử dụng google là những thứ mà lập trình viên phải có. Qua đó thấy việc học lập trình game nó cung cấp rất nhiều trang bị cần thiết cho sinh viên, giúp sinh viên hình dung sơ lược được 1 project được tổ chức thực thi như nào.
 
 -  **Hướng phát triển game**
 
   - Bổ sung chức năng cho game
-    - thêm vật phẩm bình xăng, khi chiếc xe di chuyển thì lượng xăng giảm dần và các bình xăng sẽ được render ngẫu nhiên trên đường, khi hết xăng bạn sẽ thua cuộc.
+    - Thêm vật phẩm bình xăng, khi chiếc xe di chuyển thì lượng xăng giảm dần và các bình xăng sẽ được render ngẫu nhiên trên đường, khi hết xăng bạn sẽ thua cuộc.
     - Thêm vật phẩm tăng sức mạnh, khi ăn được vật phẩm này, bạn sẽ trở nên vô địch và có khả năng húc hoặc bay qua các xe khác.
-    - thêm các lựa chọn xe khác nhau khi bắt đầu chơi.
-    - thêm khả năng di chuyển sang làn khác cho các xe chạy ngược chiều.
-    - thêm nhiều và đa dang dạng các chướng ngại trên đường.
+    - Thêm các lựa chọn xe khác nhau khi bắt đầu chơi.
+    - Thêm khả năng di chuyển sang làn khác cho các xe chạy ngược chiều.
+    - Thêm nhiều và đa dang dạng các chướng ngại trên đường.
     - Chuyển màn: khi nhận được một số điểm nào đó, background sẽ thay đổi.
   - **Cải thiện đồ họa cho game.**
-    - cải thiện lại cho các nút bầm xe, và các vật thể.
+    - Cải thiện lại cho các nút bầm xe, và các vật thể.
   - **Cải thiện về cách nhận điểm.**
     - Ta sẽ render ra các texture điểm ở các làn đường và khi xảy va chạm thì ta sẽ nhận được số điểm mà texture đó quy định.
 
 - **Điều tâm đắc sau khi hoàn thiện game.**
 
   - Trong quá trình làm game điều tâm tắc đầu tiên của bản thân tôi là phần render random các đối tượng, và xử lí được va chạm cho các đối tượng sau nhiều lần thất bại.
-  - điều thứ  2 là xử lí khi ăn vật phẩm xe thay đổi màu sắc xe của người chơi
+  - Điều thứ  2 là xử lí khi ăn vật phẩm xe thay đổi màu sắc xe của người chơi
   - Làm được 1 con game đơn giản mà trước khi học mình vẫn nghĩ mình sẽ không thể thực hiện được.
+
+#### **CREDIT:**
+
+**Special thanks to:**	
+
+- Thầy Trần Quốc Long
+- Thầy Nguyễn Việt Anh
+- Thầy Nguyễn Hoàng Minh Công
+
+Đã giúp em hoàn thành bài tập này.
+
