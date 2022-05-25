@@ -25,7 +25,7 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 
 #### **CÁCH CÀI ĐẶT**
 
-Tải xuống tại đây:[Dowload](https://drive.google.com/file/d/1ydovbY9XF1h_YOjeAGJi6rjWbDGCcEoi/view?usp=sharing)
+Tải xuống tại đây:[Download](https://drive.google.com/file/d/1ydovbY9XF1h_YOjeAGJi6rjWbDGCcEoi/view?usp=sharing)
 
 Bước 1: Sau khi truy cập vào link click vào góc bên phải để tải về.
 ![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
