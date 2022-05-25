@@ -33,8 +33,9 @@ Bước 1: Sau khi truy cập vào link click vào góc bên phải để tải 
 B2: mở file GameWorld.rar chọn release.
 ![.](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
 
-B3: Chọn SDL_Lession3 để chạy chương trình .
-![.](https://user-images.githubusercontent.com/100114917/169863994-c13578fd-9c87-4fbb-9697-66da3ca52aad.PNG)
+B3: Chọn GameWorld.exe để chạy chương trình.
+
+![.](https://user-images.githubusercontent.com/100114917/170213304-0115f488-4151-454b-8b87-1e5b843fd151.PNG)
 
 *Lưu ý: Bạn phải tải file gameworld.rar thì mới có file SDL_Lession3.exe. Trong google drive sẽ không có sẵn.
 
