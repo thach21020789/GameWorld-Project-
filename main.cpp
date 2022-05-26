@@ -15,7 +15,6 @@
 #include "LTimer.h"
 #include "ButtonMeneu.h"
 
-
 using namespace std; 
 static int frame = 0;
 static int positionToRenderExplosionX = 0;
@@ -76,7 +75,6 @@ bool CheckColisonWithOstacleObject(vector<OstacleObject*> list, SDL_Rect mycar);
 bool CheckColisonToPushPower(vector<ObjectToBuffPower*> ListObjectToBuffPower, SDL_Rect mycar);
 void close();
 
-
 int main(int arv, char* argc[])
 {
 	LTimer timer;
@@ -84,7 +82,7 @@ int main(int arv, char* argc[])
 	int IndexOfCarType = rand() % 7 + 0;
 	int IndexPositionCar = rand() % 4 + 0;
 	int IndexPositionObjectToBuffPower = rand() % 4 + 0;
-	int IndexPositionObstacleObject = rand() % 2 + 0;
+	int IndexPositionObstacleObject = rand() % 3 + 0;
 	Uint32 RotTimeObstacleCar = 0;
 	Uint32 RotTimeOfObstacle = 0;
 	Uint32 RotTimeObjectToBuffPower = 0;
@@ -97,7 +95,7 @@ int main(int arv, char* argc[])
 	const int PositionToRenderObstacleObject[4] = { 324, 400, 478, 555 };
 	const int PositionToRenderObjectToBuffPower[4] = { 280,357,434,511 };
 	const string pathImageObjectBuffPower = "powerForCar/p2.png";
-	const string pathImageOstacleObject = "image_projcet/1.png";
+	const string pathImageOstacleObject[3] = { "image_projcet/1.png","image_projcet/ob1.png", "image_projcet/ob2.png"};
 	//const string PathOfImageObstacleOject[2] = {"image_projcet/1.png", "image_projcet/ob2.png"};
 	const string PathOfImageObstacleCar[7] = { "Car image/OPcar1.png","Car image/OPcar2.png", "Car image/OPcar3.png",
 	"Car image/OPcar4.png", "Car image/OPcar5.png", "Car image/OPcar6.png", "Car image/OPcar7.png", };
@@ -211,9 +209,11 @@ int main(int arv, char* argc[])
 							RotTimeOfObstacle = gtime.getTicks();
 							IndexOfCarType = rand() % 7 + 0;
 							IndexPositionCar = rand() % 4 + 0;
-
-							ObjectList.LoadObstacleObject(pathImageOstacleObject, PositionToRenderObstacleObject[IndexPositionCar], screen);
+							ObjectList.LoadObstacleObject(pathImageOstacleObject[IndexPositionObstacleObject], PositionToRenderObstacleObject[IndexPositionCar], screen);
+							IndexPositionObstacleObject = rand() % 3 + 0;
 						}
+
+
 
 						if (gtime.getTicks() - RotTimeObjectToBuffPower > 10000)
 						{
@@ -222,7 +222,6 @@ int main(int arv, char* argc[])
 							IndexPositionCar = rand() % 4 + 0;
 							ObjectList.LoadObjectToBuffPower(pathImageObjectBuffPower, PositionToRenderObjectToBuffPower[IndexPositionObjectToBuffPower], screen);
 							IndexPositionObjectToBuffPower = rand() % 4 + 0;
-							IndexPositionObjectToBuffPower = rand() % 2 + 0;
 						}
 					}
 					else if (gtime.getTicks() >= 50000 && gtime.getTicks() <= 100000)
@@ -240,8 +239,8 @@ int main(int arv, char* argc[])
 							RotTimeOfObstacle = SDL_GetTicks();
 							IndexOfCarType = rand() % 7 + 0;
 							IndexPositionCar = rand() % 4 + 0;
-							ObjectList.LoadObstacleObject(pathImageOstacleObject, PositionToRenderObstacleObject[IndexPositionCar], screen);
-							IndexPositionObstacleObject = rand() % 2 + 0;
+							ObjectList.LoadObstacleObject(pathImageOstacleObject[IndexPositionObstacleObject], PositionToRenderObstacleObject[IndexPositionCar], screen);
+							IndexPositionObstacleObject = rand() % 3 + 0;
 						}
 						if (gtime.getTicks() - RotTimeObjectToBuffPower > 9000)
 						{
@@ -267,8 +266,8 @@ int main(int arv, char* argc[])
 							RotTimeOfObstacle = gtime.getTicks();
 							IndexOfCarType = rand() % 7 + 0;
 							IndexPositionCar = rand() % 4 + 0;
-							ObjectList.LoadObstacleObject(pathImageOstacleObject, PositionToRenderObstacleObject[IndexPositionCar], screen);
-							IndexPositionObstacleObject = rand() % 2 + 0;
+							ObjectList.LoadObstacleObject(pathImageOstacleObject[IndexPositionObstacleObject], PositionToRenderObstacleObject[IndexPositionCar], screen);
+							IndexPositionObstacleObject = rand() % 3 + 0;
 						}
 						if (gtime.getTicks() - RotTimeObjectToBuffPower > 7000)
 						{
@@ -407,6 +406,7 @@ bool init()
 	}
 	return success;
 }
+
 
 bool load_media()
 {
