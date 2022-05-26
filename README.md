@@ -23,23 +23,23 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 - **Khi càng lên cao số vàng bạn nhận được sẽ nhiều hơn,  đồng nghĩa với  đó là sẽ có nhiều thử thách hơn cho bạn đó nhá.**
 - **Khi chơi người chơi có thể ăn các vật phẩm ở trên đường đi để cướng hóa sức mạnh cho chiếc xe.**
 
-#### **CÁCH CÀI ĐẶT**
+#### **CÁCH CÀI ĐẶT**:
 
 Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjtXNWBGY5QCIx67_hbpdX82p/view?usp=sharing)
 
-Bước 1: Sau khi truy cập vào link click vào góc bên phải để tải về.
+**Bước 1**: Sau khi truy cập vào link click vào góc bên phải để tải về.
 ![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
 
-B2: mở file GameWorld.rar chọn release.
+**Bước 2**:  mở file GameWorld.rar chọn release.
 ![.](https://user-images.githubusercontent.com/100114917/169863916-2794df9a-8638-42ba-a46d-7de565b32722.PNG)
 
-B3: Chọn GameWorld.exe để chạy chương trình.
+**Bước 3**: Chọn GameWorld.exe để chạy chương trình.
 
 ![.](https://user-images.githubusercontent.com/100114917/170213304-0115f488-4151-454b-8b87-1e5b843fd151.PNG)
 
 *Lưu ý: Bạn phải tải file gameworld.rar thì mới có file GameWorld.exe. Trong google drive sẽ không có sẵn.
 
-#### **CÁC Ý TƯỞNG CHÍNH**
+#### **CÁC Ý TƯỞNG CHÍNH**:
 
 
 
@@ -62,7 +62,7 @@ B3: Chọn GameWorld.exe để chạy chương trình.
   - Ta sẽ tạo ra 1 đối tượng mainCar và 2  texture là 2 trạng thái khi được cường hóa sức mạnh khi không được cường hóa sức mạnh.
   - Khi ta kiểm tra điều kiện xảy ra va chạm với vận phầm ta sẽ có biến lưu thời gian tại thời điểm đó, ta xét lại trạng thái của xe khi hết thời gian quy ta đinh lại xét lại trạng thái ban đầu của nó.
 
-#### **MÔ TẢ CHỨC NĂNG*
+**MÔ TẢ CHỨC NĂNG:**
 
  Link Youtube mô tả: https://youtu.be/3o1E1h5qmh4
 
@@ -80,26 +80,84 @@ B3: Chọn GameWorld.exe để chạy chương trình.
   - Khi xảy ra va chạm.
   - Hiệu ứng đổi màu mỗi khi xe ăn được vật phẩm.
 
-#### **CÁC KĨ THUẬT LẬP TRÌNH ĐƯỢC SỬ DỤNG** .
+#### **CÁC KĨ THUẬT LẬP TRÌNH ĐƯỢC SỬ DỤNG**:
 
 - **Mảng thường, Mảng Vector.**
 - **Con trỏ/giải phóng bộ nhớ.**
 - **Class.**
 - **Bắt sự kiện.**
 - **Độ họa SDL.**
--  **Bắt va chạm hình chứ nhật.**
+- **Bắt va chạm hình chứ nhật.**
 - **Đặt cờ.**
 - **Sinh ngẫu nhiên số.**
 - **Chia file.**
 - **Các lớp đối tượng được sử dụng.**
   - Class LTexture.
+    - LoadFromFile(): Tải một ảnh từ một 1 file lưu trữ đến Texture.
+    - loadFromRenderedText(): Tải 1 file chữ thành chữ.
+    - render(): Hiện thi hình ảnh lên màn hình.
+    - Free(): giải phóng dữ liệu.
+    - getRect(): Lấy hình hộp bao quanh một Texture.
+    - getTexture(): Lấy ra Texture hiện tại.
+    - SetTexture (): set Texture  mình muốn lấy ra.
   - Class buttonMeneu.
   - Class CommomObject.
+    - LoadObstacleCar(): Tải hình ảnh từ file của các xe chạy ngược chiều.
+    - HandleObstaclecarList(): xử lí vận tốc của xe.
+    - RenderObstaclecarList(): Hiện thi các xe chạy ngược chiều lên màn hình.
+    - GetListObstacleCar(): lấy ra danh sách các xe chạy ngược chiều .
+    - LoadObstacleObject(): Tải hình ảnh từ file của các chướng ngại vật(trừ xe) chạy ngược chiều.
+    - HandleObstacleObject(): xử lí vận tốc của chướng ngại vật.
+    - RenderObstacleObject(): hiện thi các chướng ngại vật ra màn hình.
+    - get_ListObstacleObject(): lấy ra danh sách các chướng ngại vật chạy ngược chiều.
+    - LoadObjectToBuffPower(): Tải các hình file để lưu Texture.
+    - HandleObstacleListObjectToBuffPower(): Xử lí vận tốc cho các item cường hóa sức mạnh
+    - RenderObstacleListObjectToBuffPower():  hiện thi các item cường hóa sức mạnh ra màn hình.
+    - GetListObjectToBuffPower(): lấy ra danh sách các item.
+    - ClearObstacleCar(): Xóa hết các xe chạy ngược chiều khi đi hết màn hình.
+    - clearListObstacleObject():  Xóa hết các chướng ngại vật khi đi hết màn hình.
+    - clearListObjectToBuffPower(): xóa các item.
   - Class LTimer.
+    - start(): Khởi tạo thời gian.
+    - stop(): Dừng thời gian lại, thời gian quay trở về 0.
+    - pause(): tạm dừng thời gian.
+    - unpause(): thời gian tiếp tục chạy sau khi bị tạm dừng.
+    - getTicks(): Đồng hồ thời gian.
+    - isStarted(): Kiểm tra trạng thái của đồng hồ có đang bắt đầu hay không.
+    - isPaused(): kiểm tra trạng thái xem đồng hồ có đang tạm dừng không.
   - Class MainCar.
-  - Class ObjectBuffPower.
+    - init(): Khởi tạo vị trí của xe và vị trí của hộp bao quanh nó (Khi muốn chơi màn mới).
+    - SetStartPositionMainCar(): Khởi tạo vị trí ban đầu cho xe.
+    - LoadMainCar(): Load dữ liệu của xe để lưu vào Texture.
+    - SetCurrentTexture(): Lấy ra Texture mà ta muốn lấy ra.
+    - HandleMainCar(): Xử lí di tọa độ của xe.
+    - move(): Xử lí di chuyển của xe.
+    - GetMainCarCollisionBoxOfMainCAr(): Lấy ra hình hộp xung quanh texture để kiểm tra va chạm.
+    - 
+  - Class ItemToBuffPower
+    - ​	SetStatrtPositionOfObjectBuffPower(): Khởi tạo vị trí cho các item cường hóa sức mạnh cho xe.
+    - LoadObjectTobuffPower(): Tải hình ảnh các item từ file .
+    - AutoIncreaseYForObjectBuffPower(): tăng vận tốc của các item.
+    - ObjectBuffPowernotMove(): các item dừng di chuyển.
+    - render(): hiển thị các hình ảnh item ra màn hình.
+    - GetPositionYofObjectBuffPower(): Lấy tọa độ theo trục Y của các item.
+    - GetBoxRect(): Lấy ra hình bên ngoài bao quanh item.
   - Class ObstalceCar.
+    - SetStartPosionOfObstacleCar() : Khởi tạo vị trí của các xe và hộp xung quanh của các xe chạy ngược chiều.
+    - LoadObstacleCar(): Tải dữ liệu xe để lưu vào Texture.
+    - AutoIncreaseY(): Tăng vận tốc cho xe.
+    - ObstacleCarNotMove(): Làm cho các xe không di chuyển.
+    - render(): Tải các hình ảnh xe ra màn hình.
+    - GetObstacleCarPosY(): Lấy vị trí theo trục Y của các xe chạy ngược chiều.
+    - GetObstacleCarRect_box(): Lấy ra hộp bao quanh các xe để check va chạm.
   - Class ObstacleObject.
+    - SetStartPosition(): xét vị trí cho các chướng ngại vật trên đường (trừ xe).
+    - LoadObstacleObject_texture(): tải các hình ảnh chướng ngại vật từ file để lưu vào texture.
+    - AutoIncreaseYForOstacleObject(): Cộng vận tốc theo trục Y của các chướng ngại vật.
+    - ObjectNotMove(): Cho các chướng ngại vật dừng lại.
+    - render(): Hiện thi các chướng ngại vật ra màn hình.
+    - GetObjectPositionY(): Lấy tọa độ của các chướng ngại vật.
+    - getObstacleObjectRect(): Lấy hình bao quanh của chướng ngại vật để kiểm tra va chạm.
 
 #### **KẾT LUẬN,HƯỚNG PHÁT TRIỂN GAME, NHỮNG ĐIỀU TÂM ĐẮC.
 
@@ -125,7 +183,7 @@ Qua quá trình làm game giúp cho bản thân các sinh viên học được n
   - Điều thứ  2 là xử lí khi ăn vật phẩm xe thay đổi màu sắc xe của người chơi
   - Làm được 1 con game đơn giản mà trước khi học mình vẫn nghĩ mình sẽ không thể thực hiện được.
 
-#### **CREDIT:**
+#### LỜI CẢM ƠN:
 
 **Special thanks to:**	
 
