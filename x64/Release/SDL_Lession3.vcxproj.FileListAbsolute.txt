@@ -1,1 +1,2 @@
 C:\Users\Admin\Desktop\test\GameWorld\x64\Release\GameWorld.exe
+C:\Users\Admin\Desktop\GameWorld-Project-\x64\Release\GameWorld.exe
