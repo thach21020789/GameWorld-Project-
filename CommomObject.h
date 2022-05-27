@@ -5,11 +5,19 @@
 #include <string>
 #include <sstream>
 #include <vector>
-
+#include <SDL_mixer.h>
+#include "Htexture.h"
 #include "ObstacleCar.h"
 #include "ObjectBuffPower.h"
 #include "ObstacleObject.h"
 
+
+enum mode
+{
+	EASY = 0, MEDIUM = 1, HARD = 2, SUPER_HARD = 3
+};
+
+const int OBSTACLE_SPEED[4] = { 5,6,7,8 };
 
 class OBJECT
 {
@@ -18,25 +26,42 @@ public:
 	const int PositionToRenderObstacle = -200;
 	const int HeightOfOstacleObject = 25;
 	const int ScreenHeight = 650;
+
 	OBJECT();
 	~OBJECT();
+
 	void LoadObstacleCar(string path, const int& pos, SDL_Renderer* screen);
-	void HandleObstaclecarList(bool& PauseGame, bool& IsStartGame, bool& IsIncreaseVelocity);
+	void HandleObstaclecarList(SDL_Rect maincar, SDL_Renderer* screen, bool& lose_game, bool &use_power, Mix_Chunk* SoundWhenGameOver);
 	void RenderObstaclecarList(SDL_Renderer* screen);
-	vector<OBSTACLE_CAR*>GetListObstacleCar() const { return ListObstacleCar; }
+	vector<OBSTACLE_CAR*>GetListObstacleCar() const;
+
 	void LoadObstacleObject(string path, const int& pos, SDL_Renderer* screen);
-	void HandleObstacleObject(bool& PauseGame, bool& IsStartGame);
+	void HandleObstacleObject(SDL_Rect maincar, SDL_Renderer* screen, bool& lose_game, bool& use_power, Mix_Chunk* SoundWhenGameOver);
 	void RenderObstacleObject(SDL_Renderer* screen);
-	vector<OstacleObject*> get_ListObstacleObject() const { return ListObstacleObject; }
+	vector<OstacleObject*> get_ListObstacleObject() const;
+
 	void LoadObjectToBuffPower(string path, const int& pos, SDL_Renderer* screen);
-	void HandleObstacleListObjectToBuffPower(bool& PauseGame, bool& IsStartGame);
+	void HandleObstacleListObjectToBuffPower(SDL_Rect maincar, SDL_Renderer* screen, bool& switch_car_texture);
 	void RenderObstacleListObjectToBuffPower(SDL_Renderer* screen);
-	vector<ObjectToBuffPower*>GetListObjectToBuffPower() const { return ListObjectToBuffPower; }
+	vector<ItemToBuffPower*>GetListObjectToBuffPower() const;
+
+
 	void ClearObstacleCar();
 	void clearListObstacleObject();
 	void clearListObjectToBuffPower();
+
+	void increaseHardMode() {
+		if (hard_mode == EASY) hard_mode = MEDIUM;
+		else if (hard_mode == MEDIUM) hard_mode = HARD;
+		else if (hard_mode == HARD) hard_mode = SUPER_HARD;
+	}
+	void resetHardMode() { hard_mode = EASY; }
 private:
 	vector<OBSTACLE_CAR*> ListObstacleCar;
 	vector<OstacleObject*> ListObstacleObject;
-	vector <ObjectToBuffPower*> ListObjectToBuffPower;
+	vector <ItemToBuffPower*> ListObjectToBuffPower;
+
+	int hard_mode;
 };
+
+static OBJECT ObjectList;

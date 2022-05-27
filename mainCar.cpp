@@ -13,6 +13,11 @@ void MainCar::init()
 	MainCarRect.x = 380;
 	MainCarRect.y = 510;
 
+	MainCarRect = { 380,500,WithOfCarMain,HeightOfCarMain };
+	BoxOfMainCArToCheckCollision = { 390,520,50, 115 };
+
+	mVelX = 0;
+	mVelY = 0;
 
 	BoxOfMainCArToCheckCollision.x = 390;
 	BoxOfMainCArToCheckCollision.y = 510;
@@ -88,9 +93,9 @@ void MainCar::move()
 void MainCar::render(SDL_Renderer *screen)
 {
 	LTexture::render(screen, MainCarRect.x, MainCarRect.y);
-	//SDL_SetRenderDrawColor(screen, 0, 0, 0, 255);
-	//SDL_RenderDrawRect(screen, &BoxOfMainCArToCheckCollision);
-	//SDL_RenderDrawRect(screen, &MainCarRect);
+	/*SDL_SetRenderDrawColor(screen, 0, 0, 0, 255);
+	SDL_RenderDrawRect(screen, &BoxOfMainCArToCheckCollision);
+	SDL_RenderDrawRect(screen, &MainCarRect);*/
 }
 SDL_Rect MainCar::GetMainCarRect() const { return MainCarRect; }
 SDL_Rect MainCar::GetMainCarCollisionBoxOfMainCAr() const { return BoxOfMainCArToCheckCollision; }

@@ -34,3 +34,5 @@ private:
 	SDL_Rect BoxOfMainCArToCheckCollision;
 	int mVelY, mVelX;
 };
+
+static MainCar AUDI_X8;

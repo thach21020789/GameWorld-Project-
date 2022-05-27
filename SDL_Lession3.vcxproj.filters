@@ -36,10 +36,16 @@
     <ClCompile Include="CommomObject.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonMeneu.cpp">
+    <ClCompile Include="LTimer.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="LTimer.cpp">
+    <ClCompile Include="function.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="button.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,7 +71,13 @@
     <ClInclude Include="LTimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonMeneu.h">
+    <ClInclude Include="button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="function.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

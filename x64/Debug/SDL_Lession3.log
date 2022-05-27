@@ -1,2 +1,13 @@
-﻿  main.cpp
-  SDL_Lession3.vcxproj -> C:\Users\Admin\Desktop\test\SDL_Lession3\x64\Debug\SDL_Lession3.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SDL_Lession3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  CommomObject.cpp
+  Htexture.cpp
+  LTimer.cpp
+  Menu.cpp
+  ObjectBuffPower.cpp
+  ObstacleObject.cpp
+  button.cpp
+  function.cpp
+  main.cpp
+  mainCar.cpp
+  Generating Code...
+  SDL_Lession3.vcxproj -> C:\Users\Admin\Desktop\GameWorld-Project-\x64\Debug\GameWorld.exe

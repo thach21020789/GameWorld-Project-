@@ -1,1 +1,2 @@
 C:\Users\Admin\Desktop\test\SDL_Lession3\x64\Debug\SDL_Lession3.exe
+C:\Users\Admin\Desktop\GameWorld-Project-\x64\Debug\GameWorld.exe

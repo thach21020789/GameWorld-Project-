@@ -19,22 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ButtonMeneu.cpp" />
+    <ClCompile Include="button.cpp" />
     <ClCompile Include="CommomObject.cpp" />
+    <ClCompile Include="function.cpp" />
     <ClCompile Include="LTimer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Htexture.cpp" />
     <ClCompile Include="mainCar.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="ObjectBuffPower.cpp" />
     <ClCompile Include="ObstacleCar.cpp" />
     <ClCompile Include="ObstacleObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ButtonMeneu.h" />
+    <ClInclude Include="button.h" />
     <ClInclude Include="CommomObject.h" />
+    <ClInclude Include="function.h" />
     <ClInclude Include="LTimer.h" />
     <ClInclude Include="mainCar.h" />
     <ClInclude Include="Htexture.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="ObjectBuffPower.h" />
     <ClInclude Include="ObstacleCar.h" />
     <ClInclude Include="ObstacleObject.h" />

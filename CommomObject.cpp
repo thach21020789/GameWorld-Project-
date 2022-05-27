@@ -1,7 +1,7 @@
 #include "CommomObject.h"
+#include "function.h"
 
-
-OBJECT::OBJECT() {};
+OBJECT::OBJECT() { hard_mode = EASY; };
 OBJECT::~OBJECT() {};
 void OBJECT::LoadObstacleCar(string path, const int& pos, SDL_Renderer *screen)
 {
@@ -12,21 +12,32 @@ void OBJECT::LoadObstacleCar(string path, const int& pos, SDL_Renderer *screen)
 		return;
 	}
 	newCar->SetStartPosionOfObstacleCar(pos, PositionToRenderObstacle);
+	newCar->set_is_moving(true);
+	newCar->Set_OBSTACLESPEED(OBSTACLE_SPEED[hard_mode]);
 	ListObstacleCar.push_back(newCar);
 }
 
-void OBJECT::HandleObstaclecarList(bool &PauseGame, bool &IsStartGame, bool & IsIncreaseVelocity)
+void OBJECT::HandleObstaclecarList(SDL_Rect maincar, SDL_Renderer* screen, bool& lose_game, bool& use_power, Mix_Chunk* SoundWhenGameOver)
 {
 	if (ListObstacleCar.size() >= 1)
 	{
 		for (int i = 0; i < ListObstacleCar.size(); ++i)
 		{
-			if (PauseGame == false && IsStartGame == false) {
-				ListObstacleCar[i]->AutoIncreaseY(IsIncreaseVelocity);
+			if (ListObstacleCar[i]->get_is_moving_car()) 
+			{
+				ListObstacleCar[i]->AutoIncreaseY(maincar);
+				ListObstacleCar[i]->render(screen);
+
+				if (checkCollision(ListObstacleCar[i]->GetObstacleCarRect_box(), maincar) && !use_power)
+				{
+					lose_game = true;
+					Mix_PlayChannel(-1, SoundWhenGameOver, 0);
+					break;
+				}
 			}
 			else
 			{
-				ListObstacleCar[i]->ObstacleCarNotMove();
+				ListObstacleCar[i]->render(screen);
 			}
 		}
 	}
@@ -52,7 +63,7 @@ void OBJECT::RenderObstaclecarList(SDL_Renderer *screen)
 	}
 	else return;
 }
-//vector<OBSTACLE_CAR*> OBJECT::GetListObstacleCar() const { return ListObstacleCar; }
+vector<OBSTACLE_CAR*> OBJECT::GetListObstacleCar() const { return ListObstacleCar; }
 
 void OBJECT::LoadObstacleObject(string path, const int& pos,SDL_Renderer *screen)
 {
@@ -63,22 +74,33 @@ void OBJECT::LoadObstacleObject(string path, const int& pos,SDL_Renderer *screen
 		return;
 	}
 	newObject->SetStartPosition(pos, - HeightOfOstacleObject);
+	newObject->set_is_moving(true);
+
 	ListObstacleObject.push_back(newObject);
+	
 }
-void OBJECT::HandleObstacleObject(bool & PauseGame, bool &IsStartGame)
+void OBJECT::HandleObstacleObject(SDL_Rect maincar, SDL_Renderer* screen, bool& lose_game, bool& use_power, Mix_Chunk* SoundWhenGameOver)
 {
 	if (ListObstacleObject.size() >= 1)
 	{
 		for (int i = 0; i < ListObstacleObject.size(); ++i)
 		{
-
-			if (PauseGame == false && IsStartGame == false)
+			if (ListObstacleObject[i]->get_is_moving())
 			{
-				ListObstacleObject[i]->AutoIncreaseYForOstacleObject();
+				ListObstacleObject[i]->AutoIncreaseYForOstacleObject(maincar);
+				ListObstacleObject[i]->render(screen);
+
+				if (checkCollision(ListObstacleObject[i]->getObstacleObjectRect(), maincar) && !use_power)
+				{
+
+					lose_game = true;
+					Mix_PlayChannel(-1, SoundWhenGameOver, 0);
+					break;
+				}
 			}
 			else
 			{
-				ListObstacleObject[i]->ObjectNotMove();
+				ListObstacleObject[i]->render(screen);
 			}
 		}
 	}
@@ -102,32 +124,42 @@ void OBJECT::RenderObstacleObject(SDL_Renderer *screen)
 	}
 	else return;
 }
-//vector<OstacleObject*> OBJECT::get_ListObstacleObject() const { return ListObstacleObject; }
+vector<OstacleObject*> OBJECT::get_ListObstacleObject() const { return ListObstacleObject; }
 //
 void OBJECT::LoadObjectToBuffPower(string path, const int& pos, SDL_Renderer *screen)
 {
-	ObjectToBuffPower* NewObjectToBuffPower = new ObjectToBuffPower;
+	ItemToBuffPower* NewObjectToBuffPower = new ItemToBuffPower;
 	if (!NewObjectToBuffPower->LoadObjectTobuffPower(path, screen))
 	{
 		cout << "fail to load car texture\n";
 		return;
 	}
 	NewObjectToBuffPower->SetStatrtPositionOfObjectBuffPower(pos, -400);
-
+	NewObjectToBuffPower->set_is_moving(true);
 	ListObjectToBuffPower.push_back(NewObjectToBuffPower);
 }
 
-void OBJECT::HandleObstacleListObjectToBuffPower(bool  &PauseGame, bool & IsStartGame)
+void OBJECT::HandleObstacleListObjectToBuffPower(SDL_Rect maincar, SDL_Renderer* screen, bool & switch_car_texture)
 {
 	if (ListObjectToBuffPower.size() >= 1)
 	{
 		for (int i = 0; i < ListObjectToBuffPower.size(); ++i)
 		{
-			if (PauseGame == false && IsStartGame == false)
+			if (ListObjectToBuffPower[i]->get_is_moving())
 			{
-				ListObjectToBuffPower[i]->AutoIncreaseYForObjectBuffPower();
+				ListObjectToBuffPower[i]->AutoIncreaseYForObjectBuffPower(maincar);
+				ListObjectToBuffPower[i]->render(screen);
+
+				if (checkCollision(maincar, ListObjectToBuffPower[i]->GetBoxRect()))
+				{
+					switch_car_texture = true;
+
+				}
 			}
-			else ListObjectToBuffPower[i]->ObjectBuffPowernotMove();
+			else
+			{
+				ListObjectToBuffPower.erase(ListObjectToBuffPower.begin() + i);
+			}
 		}
 	}
 	else return;
@@ -151,7 +183,8 @@ void OBJECT::RenderObstacleListObjectToBuffPower(SDL_Renderer *screen)
 	}
 	else return;
 }
-//vector<ObjectToBuffPower*> OBJECT::GetListObjectToBuffPower() const { return ListObjectToBuffPower; }
+
+vector<ItemToBuffPower*> OBJECT::GetListObjectToBuffPower() const { return ListObjectToBuffPower; }
 
 void OBJECT::ClearObstacleCar()
 {

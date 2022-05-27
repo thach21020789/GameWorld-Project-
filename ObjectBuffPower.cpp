@@ -1,34 +1,38 @@
 #include "ObjectBuffPower.h"
+#include "function.h"
 
-ObjectToBuffPower::ObjectToBuffPower()
+ItemToBuffPower::ItemToBuffPower()
 {
 	BoxRect = { 0,0,WidthOfObjectBuffPower,HeightOfOstacleObject };
+	is_moving = false;
 }
-ObjectToBuffPower::~ObjectToBuffPower() {};
-void ObjectToBuffPower::SetStatrtPositionOfObjectBuffPower(const int& x, const int& y)
+ItemToBuffPower::~ItemToBuffPower() {};
+void ItemToBuffPower::SetStatrtPositionOfObjectBuffPower(const int& x, const int& y)
 {
 	BoxRect.x = x;
 	BoxRect.y = y;
 }
-bool ObjectToBuffPower::LoadObjectTobuffPower(string path, SDL_Renderer* screen)
+bool ItemToBuffPower::LoadObjectTobuffPower(string path, SDL_Renderer* screen)
 {
 	bool load = LTexture::loadFromFile(path, screen);
 	return load;
 }
-void ObjectToBuffPower::AutoIncreaseYForObjectBuffPower()
+void ItemToBuffPower::AutoIncreaseYForObjectBuffPower(SDL_Rect& maincar)
 {
-	BoxRect.y += BOX_SPEED;
+	if (is_moving) BoxRect.y += BOX_SPEED;
+
+	if (checkCollision(maincar, BoxRect)) is_moving = false;
 }
-void ObjectToBuffPower::ObjectBuffPowernotMove()
+void ItemToBuffPower::ObjectBuffPowernotMove()
 {
 	BoxRect.y += 0;
 }
-void ObjectToBuffPower::render(SDL_Renderer * screen)
+void ItemToBuffPower::render(SDL_Renderer * screen)
 {
 	LTexture::render(screen, BoxRect.x, BoxRect.y);
 	//SDL_SetRenderDrawColor(screen, 0, 0, 0, 255);
 	//SDL_RenderDrawRect(screen, &BoxRect);
 	//SDL_RenderDrawRect(screen, &MainBoxRectToCheckColision);
 }
-int ObjectToBuffPower::GetPositionYofObjectBuffPower() const { return BoxRect.y; }
-SDL_Rect ObjectToBuffPower::GetBoxRect() const { return BoxRect; }
+int ItemToBuffPower::GetPositionYofObjectBuffPower() const { return BoxRect.y; }
+SDL_Rect ItemToBuffPower::GetBoxRect() const { return BoxRect; }

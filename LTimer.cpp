@@ -8,6 +8,7 @@ LTimer::LTimer()
 }
 void LTimer::start()
 {
+	turn_off_clock = false;
 	mStarted = true;
 	mPaused = false;
 	mStartTicks = SDL_GetTicks();
@@ -15,6 +16,7 @@ void LTimer::start()
 }
 void LTimer::stop()
 {
+	turn_off_clock = true;
 	mStarted = false;
 	mPaused = false;
 	mStartTicks = 0;
@@ -54,6 +56,7 @@ Uint32 LTimer::getTicks()
 	}
 	return time;
 }
+
 bool LTimer::isStarted()
 {
 	return mStarted;
@@ -62,3 +65,5 @@ bool LTimer::isPaused()
 {
 	return mPaused && mStarted;
 }
+
+bool LTimer::turn_off() const { return turn_off_clock; }

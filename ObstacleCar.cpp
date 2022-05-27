@@ -1,10 +1,15 @@
 #include "ObstacleCar.h"
+#include "function.h"
 
 OBSTACLE_CAR::OBSTACLE_CAR()
 {
 	ObstacleCarRect = { 0,0,WidthOfObstacleCar ,HeightOfObstacleCar };
 
 	ObstacleCarBoxToCheckCollision = { 0,0,WidthOfObstacleCar - NumberToJust ,HeightOfObstacleCar - NumberToJust };
+
+	OBSTACLESPEED = 0;
+
+	is_moving = false;
 }
 OBSTACLE_CAR::~OBSTACLE_CAR() {};
 void OBSTACLE_CAR::SetStartPosionOfObstacleCar(const int& x, const int& y)
@@ -20,16 +25,12 @@ bool OBSTACLE_CAR::LoadObstacleCar(string path, SDL_Renderer* screen)
 	bool load = LTexture::loadFromFile(path, screen);
 	return load;
 }
-void OBSTACLE_CAR::AutoIncreaseY(bool IsIncreaseVelocity) {
-	if (IsIncreaseVelocity == false)
+
+void OBSTACLE_CAR::AutoIncreaseY(SDL_Rect maincar) {
+	if (is_moving)
 	{
-		ObstacleCarRect.y += OBSTACLESPEED1;
-		ObstacleCarBoxToCheckCollision.y += OBSTACLESPEED1;
-	}
-	else
-	{
-		ObstacleCarRect.y += OBSTACLESPEED2;
-		ObstacleCarBoxToCheckCollision.y += OBSTACLESPEED2;
+		ObstacleCarRect.y += OBSTACLESPEED;
+		ObstacleCarBoxToCheckCollision.y += OBSTACLESPEED;
 	}
 }
 

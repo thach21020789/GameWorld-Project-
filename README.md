@@ -25,7 +25,7 @@ GameWorld được phát triển dựa trên tựa game đua xe cổ điển né
 
 #### **CÁCH CÀI ĐẶT**:
 
-Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjtXNWBGY5QCIx67_hbpdX82p/view?usp=sharing)
+Tải xuống tại đây: [download](https://drive.google.com/file/d/1gFqIGVLQyj48KNJ8iiak9ttDFzPoSgxC/view?usp=sharing)
 
 **Bước 1**: Sau khi truy cập vào link click vào góc bên phải để tải về.
 ![](https://user-images.githubusercontent.com/100114917/169863797-3bf38b37-5d68-4ef0-86f8-961d5fa09eed.PNG)
@@ -44,10 +44,9 @@ Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjt
 
 
 * **Ramdom các vật thể ngẫu nhiên:**
-
   - Xây dựng 1 class để sử lí 3 đối tượng bằng vector : xa chạy ngược chiểu Vector<Obstacle car>, chướng ngại vật trên đường Vector<obstacle object>, vật phẩm  Vector<object To buff power>. lớp này có chức năng là đẩy đối tưởng vào vector, xử lí vận tốc, render đối tượng ra màn hình.
   - Khi chương trình chạy ta đẩy các đối tượng được đẩy vào vector rồi render ra màn hình, khi đối tượng chạy quá chiều cao của màn hình nó sẽ bị xóa khỏi vector.
-
+  
 * **Xử lí va chạm.**
 
   - Mỗi vật thể ta sẽ có một cái khung hình chữ nhật bao quanh nó. Ta sẽ xét các trường hợp khi vật **không** xảy ra va chạm
@@ -100,7 +99,30 @@ Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjt
     - getRect(): Lấy hình hộp bao quanh một Texture.
     - getTexture(): Lấy ra Texture hiện tại.
     - SetTexture (): set Texture  mình muốn lấy ra.
-  - Class buttonMeneu.
+  - Class button
+    - handleButton(): Kiểm tra điều kiện khi ta trỏ vào nút hay chưa.
+    - LoadButton(): Load file ảnh của các nút.
+    - renderButton(): Hiện thị các nút ra màn hình.
+    - setIsButtonUseInScreen(): Xét bật tắt các nút.
+    - setIsButtonClick(): Xét xem đã click vào nút chưa.
+    -  setButtonRect(): Khợi tạo vi trí các nút .
+    - setButtonClipOut():  ảnh khi chưa trỏ chuột tới.
+    - setButtonClipOver(): ảnh khi ta vừa click xong thả lên.
+    - setButtonClipDown(): Xét ảnh khi ta ấn chuột.
+    - getIsButtonClick(): Lấy ra trạng thái có đang click chuột vào nút hay không.
+  - Class Menu
+    - loadButtonTexture(): Tải ảnh chưa các nút và xét clip cho nó.
+    - handleMenu() : Xét điều kiện khi ta click vào từng nút.
+    - renderMenu(): Hiện thi từng nút ra màn hình.
+    - renderBackground() : Render background của menu ở các trạng thái: trạng thái chờ, background cho nút Option và background của nút pause.
+    - loadMenuBackdground() : Tải lên background của từng trạng thái.
+    - setStartScreen() : Trạng thái bất tắt các nút ở màn hình chờ.
+    - setPlayingScreen(): Trạng thái bật tắt các nút khi ta đang chơi game.
+    - setPauseScreen(): Trạng thái bật tắt các nút ở trạng thái tạm dừng.
+    - setOptionScreen() : trạng thái các nút khi ta chọn nút Option.
+    - setPlayAgainScreen(): trạng thái các nút khi ở màn hình chờ play again.
+    - setExplosionPositon(): Lấy tọa độ x,y của hiệu ứng nổ.
+    - getScreenStatus(): Lấy ra trạng thái của màn hình.
   - Class CommomObject.
     - LoadObstacleCar(): Tải hình ảnh từ file của các xe chạy ngược chiều.
     - HandleObstaclecarList(): xử lí vận tốc của xe.
@@ -117,6 +139,8 @@ Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjt
     - ClearObstacleCar(): Xóa hết các xe chạy ngược chiều khi đi hết màn hình.
     - clearListObstacleObject():  Xóa hết các chướng ngại vật khi đi hết màn hình.
     - clearListObjectToBuffPower(): xóa các item.
+    - increaseHardMode(): Tăng chỉ số của mảng vận tốc  cảu các xe chạy ngược chiều.
+    - resetHardMode(): Chỉ số của mảng vận tốc quay về ban đầu.
   - Class LTimer.
     - start(): Khởi tạo thời gian.
     - stop(): Dừng thời gian lại, thời gian quay trở về 0.
@@ -133,7 +157,6 @@ Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjt
     - HandleMainCar(): Xử lí di tọa độ của xe.
     - move(): Xử lí di chuyển của xe.
     - GetMainCarCollisionBoxOfMainCAr(): Lấy ra hình hộp xung quanh texture để kiểm tra va chạm.
-    - 
   - Class ItemToBuffPower
     - ​	SetStatrtPositionOfObjectBuffPower(): Khởi tạo vị trí cho các item cường hóa sức mạnh cho xe.
     - LoadObjectTobuffPower(): Tải hình ảnh các item từ file .
@@ -161,7 +184,7 @@ Tải xuống tại đây:[Download](https://drive.google.com/file/d/1EBbZqBawjt
 
 #### **KẾT LUẬN,HƯỚNG PHÁT TRIỂN GAME, NHỮNG ĐIỀU TÂM ĐẮC.
 
-Qua quá trình làm game giúp cho bản thân các sinh viên học được nhiều về kĩ năng viết code, xử lí code, trình bày code, kĩ thuật tách file, khả năng tư duy, học được kiến thức mới về đồ họa, học được thêm nhiều kiến thức khác như github, photoshop, thuần thục hơn trong việc sử dụng class, cũng như khả năng kiên trì, tự tìm hiểu học hỏi, kĩ năng sử dụng google là những thứ mà lập trình viên phải có. Qua đó thấy việc học lập trình game nó cung cấp rất nhiều trang bị cần thiết cho sinh viên, giúp sinh viên hình dung sơ lược được 1 project được tổ chức thực thi như nào.
+​	Qua quá trình làm game giúp cho bản thân các sinh viên học được nhiều về kĩ năng viết code, xử lí code, trình bày code, kĩ thuật tách file, khả năng tư duy, học được kiến thức mới về đồ họa, học được thêm nhiều kiến thức khác như github, photoshop, thuần thục hơn trong việc sử dụng class, cũng như khả năng kiên trì, tự tìm hiểu học hỏi, kĩ năng sử dụng google là những thứ mà lập trình viên phải có. Qua đó thấy việc học lập trình game nó cung cấp rất nhiều trang bị cần thiết cho sinh viên, giúp sinh viên hình dung sơ lược được 1 project được tổ chức thực thi như nào.
 
 -  **Hướng phát triển game**
 

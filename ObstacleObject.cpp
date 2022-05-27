@@ -1,4 +1,5 @@
 #include "ObstacleObject.h"
+#include "function.h"
 
 OstacleObject::OstacleObject()
 {
@@ -11,9 +12,9 @@ bool OstacleObject::OstacleObject::LoadObstacleObject_texture(string path, SDL_R
 	bool loadFile = LTexture::loadFromFile(path,screen);
 	return loadFile;
 }
-void OstacleObject::AutoIncreaseYForOstacleObject()
+void OstacleObject::AutoIncreaseYForOstacleObject(SDL_Rect &maincar)
 {
-	BoxObstacleObject.y += OstacleObjectSpeed;
+	if (is_moving) BoxObstacleObject.y += OstacleObjectSpeed;
 }
 void OstacleObject::ObjectNotMove()
 {
