@@ -12,7 +12,7 @@
 
 GameWorld được phát triển dựa trên tựa game đua xe cổ điển né chướng ngại vật và các xe chạy ngược chiều với nó.
 
-[](https://user-images.githubusercontent.com/100114917/170762308-3cf58bcb-57c2-4feb-a218-48661597f20c.png)
+![](https://user-images.githubusercontent.com/100114917/170762308-3cf58bcb-57c2-4feb-a218-48661597f20c.png)
 
 **Luật chơi:**
 
