@@ -64,6 +64,8 @@
     - Phải A < Trái B.
     - Trái A > phải B.
   
+  [.](https://user-images.githubusercontent.com/100114917/171033671-f4de92c9-f9a5-47a1-b4c0-d7ecc78f51d0.PNG)
+  
     -   **Lưu ý** : khi ta xét điều kiện ngược lại để xảy ra va chạm thì sẽ **không đúng**
   
 * **Thay đổi màu sắc của xe khi ăn được vật phẩm.**
