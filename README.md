@@ -82,11 +82,11 @@
 
 - **Màn hình Menu:**
   - Nút play.
-  - Nút option: giới thiệu, hướng dẫn chung về game. Nút này ta chỉ cần trỏ con chuột của mình tới vị trí của nút.
+  - Nút option: giới thiệu, hướng dẫn chung về game.
   - Nút Exit.
 
 - **Màn hình pause:**
-  -  Nút pause : Nút này sử dụng khi ta ấn chuột và giữ thì lệnh này sẽ được thực thi
+  -  Nút pause : tạm dừng khi đang chơi game
   - Nút exit: Thoát ra màn hình menu
 - **Màn hình Game over:**
   -  Nút Play again: Nút này sử dụng để chơi lại màn mới.
