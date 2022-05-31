@@ -99,7 +99,7 @@
   - Khi xảy ra va chạm.
   - Hiệu ứng đổi màu mỗi khi xe ăn được vật phẩm.
 
-## **5.Các kĩ thuật lập trình được sử dụng:
+## 5.Các kĩ thuật lập trình được sử dụng:
 
 - **Mảng thường, Mảng Vector.**
 - **Con trỏ/giải phóng bộ nhớ.**
