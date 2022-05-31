@@ -74,8 +74,9 @@
 
 ## **4.Mô tả chức năng:**
 
-**Link Youtube mô tả**: https://youtu.be/3o1E1h5qmh4
-
+**Link Youtube mô tả**: https://youtu.be/vn5LDpBLbB0
+  
+  Lưu ý: game có âm thanh đầy đủ do quá trình thuyết trình nên em đã giảm nó xuống mức thấp
 **Hệ thống menu với các nút chức năng:**
 
 - **Màn hình Menu:**
